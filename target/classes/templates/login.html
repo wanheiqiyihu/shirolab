@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+		body { font-family: Arial, sans-serif; margin: 2rem; }
+		.container { max-width: 360px; margin: 0 auto; }
+		input { width: 100%; padding: .5rem; margin: .4rem 0; }
+		button { width: 100%; padding: .6rem; }
+		.alert { color: #c00; margin: .6rem 0; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>登录</h2>
+		<div class="alert" th:if="${param.error}">用户名或密码错误</div>
+		<form method="post" action="/login/form">
+			<input type="text" name="username" placeholder="用户名" required />
+			<input type="password" name="password" placeholder="密码" required />
+			<label><input type="checkbox" name="rememberMe" /> 记住我</label>
+			<button type="submit">登录</button>
+		</form>
+	</div>
+</body>
+</html>
+
+
